@@ -4,14 +4,23 @@ const array = ["azerty", "kevin", "deux", "arnaud", "maxime"];
 let randomArray = array[Math.floor(Math.random() * array.length)];
 console.log(randomArray);
 
-// on affiche le nombres de lettres attendu pour ce mot random et la lettre associé si elle est true ou false
-let arrayLength = randomArray.length;
-console.log(arrayLength);
-const dNone = document.querySelectorAll(".d-none");
-console.log(dNone);
-dNone.forEach(element => {
-    element.classList.remove("d-none")
-});
+// je créer un nouveau tableau de mon mot random que je split lettre par lettre
+let newArraySplit = randomArray.split("")
+console.log(newArraySplit);
+/* je créer ensuite un tableau vide qui fait la longueur du mot random pour l'utilisateur que je vais remplir
+avec les lettres du mot random si l'utilisateur tape une lettre true */
+let userArray = newArraySplit.length
+console.log(userArray);
+
+if (userArray.includes == newArraySplit) {
+console.log("azdaz");
+}
+
+
+
+
+// on affiche le nombres de lettres attendu pour ce mot random
+
 // on affiche un tableau de lettres cliquable mais aussi possibilité de taper au clavier
 
 // je défini les nombres de coups possible pour trouver un mot
