@@ -5,37 +5,31 @@ let randomArray = array[Math.floor(Math.random() * array.length)];
 console.log(randomArray);
 
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
-let newArraySplit = randomArray.split("")
+let newArraySplit = randomArray.split("");
 console.log(newArraySplit);
 // je créer ensuite un tableau vide pour l'utilisateur 
-let userArray = []
+let userArray = [];
 console.log(userArray);
-// je vais comparer la lettre tapé par l'utilisateur par rapport a une lettre contenu dans random.split
-
-    document.querySelector("body").addEventListener("keydown", (event) => {
+/* je vais comparer la lettre tapé par l'utilisateur par rapport a une lettre contenu dans random.split et 
+ajouter la bonne lettre tapé dans le tableau vide de l'utilisateur */
+const compareKey = (event) => {
     if(event.key === newArraySplit.find((element) => element === event.key)) {
-        console.log("daze");
-    }
-})
+        userArray.push(event.key)
+        return console.log(userArray);
+    };
+};
+
+
+// je fais en sorte que la longueur du tableau de l'utilisateur ne dépasse pas celui du mot random
+
+
+
+document.querySelector("body").addEventListener("keydown", compareKey);
 
 
 
 
 
-
-
-// que je vais remplir avec les lettres du mot random si l'utilisateur tape une lettre true */
-// let checkWord = () => {
-    // document.querySelector("body").addEventListener("keydown", (event) => {
-    //     if(event.key === newArraySplit) {
-    //         console.log("fzffez");
-    //     }
-    // })
-// }
-
-
-
-    
 // on affiche le nombres de lettres attendu pour ce mot random
 
 // on affiche un tableau de lettres cliquable mais aussi possibilité de taper au clavier
