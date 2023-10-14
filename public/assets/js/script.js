@@ -1,6 +1,6 @@
 /* On commence par une liste de mots random contenu dans un tableau 
 qui doit etre séléctionné aléatoirement */
-const array = ["azerty", "kevin", "deux", "arnaud", "maxime"];
+const array = ["azerty", "kevin", "deux", "arnaud", "maxime", "aaaeee"];
 let randomArray = array[Math.floor(Math.random() * array.length)];
 console.log(randomArray);
 
@@ -13,18 +13,23 @@ console.log(userArray);
 /* je vais comparer la lettre tapé par l'utilisateur par rapport a une lettre contenu dans random.split et 
 ajouter la bonne lettre tapé dans le tableau vide de l'utilisateur */
 const compareKey = (event) => {
-    if(event.key === newArraySplit.find((element) => element === event.key)) {
-        userArray.push(event.key)
+    if(newArraySplit.find((element) => element === event.key)) {
+        userArray.push(...event.key)
         return console.log(userArray);
     };
 };
+
+
+
+
+document.querySelector("body").addEventListener("keydown", compareKey);
 
 
 // je fais en sorte que la longueur du tableau de l'utilisateur ne dépasse pas celui du mot random
 
 
 
-document.querySelector("body").addEventListener("keydown", compareKey);
+
 
 
 
