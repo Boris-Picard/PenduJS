@@ -7,18 +7,35 @@ console.log(randomArray);
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
 let newArraySplit = randomArray.split("")
 console.log(newArraySplit);
-/* je créer ensuite un tableau vide qui fait la longueur du mot random pour l'utilisateur que je vais remplir
-avec les lettres du mot random si l'utilisateur tape une lettre true */
-let userArray = newArraySplit.length
+// je créer ensuite un tableau vide pour l'utilisateur 
+let userArray = []
 console.log(userArray);
+// je vais comparer la lettre tapé par l'utilisateur par rapport a une lettre contenu dans random.split
 
-if (userArray.includes == newArraySplit) {
-console.log("azdaz");
-}
+    document.querySelector("body").addEventListener("keydown", (event) => {
+    if(event.key === newArraySplit.find((element) => element === event.key)) {
+        console.log("daze");
+    }
+})
 
 
 
 
+
+
+
+// que je vais remplir avec les lettres du mot random si l'utilisateur tape une lettre true */
+// let checkWord = () => {
+    // document.querySelector("body").addEventListener("keydown", (event) => {
+    //     if(event.key === newArraySplit) {
+    //         console.log("fzffez");
+    //     }
+    // })
+// }
+
+
+
+    
 // on affiche le nombres de lettres attendu pour ce mot random
 
 // on affiche un tableau de lettres cliquable mais aussi possibilité de taper au clavier
@@ -35,5 +52,4 @@ est correct elle s'affiche dans le mot a trouver si false le dessin commence a s
 // si l'user perd un screamer s'affiche
 
 // je créer un bouton pour rejouer 
-
 
