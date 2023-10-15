@@ -7,28 +7,30 @@ console.log(randomArray);
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
 let newArraySplit = randomArray.split("");
 console.log(newArraySplit);
-// je créer ensuite un tableau vide pour l'utilisateur 
-let userArray = [];
-console.log(userArray);
-/* je vais comparer la lettre tapé par l'utilisateur par rapport a une lettre contenu dans random.split et 
-ajouter la bonne lettre tapé dans le tableau vide de l'utilisateur */
-const compareKey = (event) => {
-    if(newArraySplit.find((element) => element === event.key)) {
-        userArray.push(...event.key)
-        return console.log(userArray);
-    };
-};
 
-
-
+// je créer une fonction qui va identifier la lettre tapé par l'utilisateur dans le body de la page
+let compareKey = (event) => {
+    console.log(event.key);
+}
 
 document.querySelector("body").addEventListener("keydown", compareKey);
 
+// j'affiche le mot random dans les span prévu 
+const dNone = document.querySelectorAll(".d-none");
 
-// je fais en sorte que la longueur du tableau de l'utilisateur ne dépasse pas celui du mot random
+let displayNone = () => {
+    dNone.forEach((element) => {
+        // if()
+            element.innerHTML = newArraySplit.indexOf();
+            element.classList.remove("d-none");
+        })
+};
+
+displayNone()
 
 
 
+// je compare maintenant la lettre tapé par l'utilisateur avec les lettres du mot random
 
 
 
@@ -52,3 +54,18 @@ est correct elle s'affiche dans le mot a trouver si false le dessin commence a s
 
 // je créer un bouton pour rejouer 
 
+
+
+
+
+
+
+
+
+// const compareKey = (event) => {
+//     if(newArraySplit.find((element) => element === event.key)) {
+//         // userArray.push(...event.key)
+//         return console.log(userArray);
+//     };
+// };
+// document.querySelector("body").addEventListener("keydown", compareKey);
