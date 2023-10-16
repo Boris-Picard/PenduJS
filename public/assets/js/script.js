@@ -121,6 +121,7 @@ splitUnderscore();
 const words = document.getElementById("word");
 words.append(userArray.join(" "));
 
+counter = 10
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
 let keys = (event) => {
     if(newArraySplit.includes(event.key)) {
@@ -128,8 +129,14 @@ let keys = (event) => {
             if(event.key === newArraySplit[key]) {
                 userArray[key] = newArraySplit[key]; 
                 words.innerHTML = userArray.join(" ");
-            };  
+            };
         };
+    } else {
+        // si l'utilisateur se trompe de lettre je lui indique avec un compteur son nombre de coups restant avant de perdre
+        const count = document.querySelector(".count");
+        counter--
+        count.innerHTML = `nombre de coups restant = ${counter = counter}`
+        console.log(counter);
     };
 };
 
@@ -154,8 +161,6 @@ addEventListener("keyup", keys);
 //     });
 // });
 
-// je créer une fonction pour gérer le nombre de coups possible
-const count = document.querySelector(".count")
 
 
 
