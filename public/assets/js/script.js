@@ -128,33 +128,35 @@ let keys = (event) => {
             if(event.key === newArraySplit[key]) {
                 userArray[key] = newArraySplit[key]; 
                 words.innerHTML = userArray.join(" ");
-            };
-        };     
-    } else {
-        console.log("wrong");
+            };  
+        };
     };
 };
 
-addEventListener("keydown", keys);
+addEventListener("keyup", keys);
 
-//je créer aussi un clavier virtuel 
-const virtualBoard = document.querySelectorAll(".virtualBoard");
+//je créer clavier virtuel 
+// const virtualBoard = document.querySelectorAll(".virtualBoard");
 
-virtualBoard.forEach(letter => {
-    letter.addEventListener("click", () => {
-        const letterValue = letter.textContent;
-        if(newArraySplit.includes(letterValue)) {
-            for(let key = 0; key < newArraySplit.length; key++) {
-                if(letterValue === newArraySplit[key]) {
-                    userArray[key] = newArraySplit[key]; 
-                    words.innerHTML = userArray.join(" ");
-                };
-            };     
-        } else {
-            console.log("wrong");
-        };
-    })
-})
+// virtualBoard.forEach(letter => {
+//     letter.addEventListener("click", () => {
+//         let letterValue = letter.textContent;
+//         if(newArraySplit.includes(letterValue)) {
+//             for(let key = 0; key < newArraySplit.length; key++) {
+//                 if(letterValue === newArraySplit[key]) {
+//                     userArray[key] = newArraySplit[key]; 
+//                     words.innerHTML = userArray.join(" ");
+//                 };
+//             };     
+//         } else {
+//             console.log("wrong");
+//         };
+//     });
+// });
+
+// je créer une fonction pour gérer le nombre de coups possible
+const count = document.querySelector(".count")
+
 
 
 // on affiche le nombres de lettres attendu pour ce mot random
