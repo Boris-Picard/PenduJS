@@ -8,32 +8,31 @@ console.log(randomArray);
 let newArraySplit = randomArray.split("");
 console.log(newArraySplit);
 
-// je créer une fonction qui va identifier la lettre tapé par l'utilisateur dans le body de la page
-let compareKey = (event) => {
-    console.log(event.key);
-}
+// je créer un tableau vide pour l'utilisateur
+let userArray = [];
+console.log(userArray);
 
-document.querySelector("body").addEventListener("keydown", compareKey);
-
-// j'affiche le mot random dans les span prévu 
-const dNone = document.querySelectorAll(".d-none");
-
-let displayNone = () => {
-    dNone.forEach((element) => {
-        // if()
-            element.innerHTML = newArraySplit.indexOf();
-            element.classList.remove("d-none");
-        })
+// j'ajoute a mon tableau utilisateur des underscores suivant la longueur du mot random dans mon html
+let splitUnderscore = () => {
+    for(let letter = 0; letter < newArraySplit.length; letter++ ) {
+    userArray[letter] = "_";
+    console.log(userArray);
+};
 };
 
-displayNone()
+splitUnderscore();
 
+// j'affiche dans mon html le tableau en _
+const words = document.getElementById("word");
+words.append(userArray.join(" "));
 
+// je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau avec _
+let key = (event) => {
+    event.key;
+    // for()
+};
 
-// je compare maintenant la lettre tapé par l'utilisateur avec les lettres du mot random
-
-
-
+addEventListener("keydown", key);
 
 
 
@@ -56,16 +55,7 @@ est correct elle s'affiche dans le mot a trouver si false le dessin commence a s
 
 
 
-
-
-
-
-
-
-// const compareKey = (event) => {
-//     if(newArraySplit.find((element) => element === event.key)) {
-//         // userArray.push(...event.key)
-//         return console.log(userArray);
-//     };
+// if(newArraySplit.find((element) => element === event.key)){
+        
+//     console.log("aaa");
 // };
-// document.querySelector("body").addEventListener("keydown", compareKey);
