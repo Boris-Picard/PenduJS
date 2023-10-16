@@ -121,7 +121,6 @@ splitUnderscore();
 const words = document.getElementById("word");
 words.append(userArray.join(" "));
 
-counter = 10
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
 let keys = (event) => {
     if(newArraySplit.includes(event.key)) {
@@ -131,13 +130,8 @@ let keys = (event) => {
                 words.innerHTML = userArray.join(" ");
             };
         };
-    } else {
-        // si l'utilisateur se trompe de lettre je lui indique avec un compteur son nombre de coups restant avant de perdre
-        const count = document.querySelector(".count");
-        counter--
-        count.innerHTML = `nombre de coups restant = ${counter = counter}`
-        console.log(counter);
     };
+    countKey();
 };
 
 addEventListener("keyup", keys);
@@ -161,17 +155,28 @@ addEventListener("keyup", keys);
 //     });
 // });
 
+// je créer un fonction qui gére le compteur de fail et qui va afficher les messages si l'utilisateur perd 
+counter = 10
+let countKey = () => {
+    const count = document.querySelector(".count");
+        counter--;
+        count.innerHTML = `nombre de coups restant = ${counter = counter}`
+    if(counter === 0) {
+        // const dNone = document.querySelector(".d-none");
+        // dNone.classList.remove("d-none");
+        removeEventListener("keyup", keys);
+    };
+};
+
+
+// j'indique le nombre de lettre attendue pour le mot a deviner 
+let letterNumber = document.querySelector(".letterNumber");
+letterNumber.innerHTML = `nombre de lettres = ${newArraySplit.length}`;
 
 
 
-// on affiche le nombres de lettres attendu pour ce mot random
 
-// on affiche un tableau de lettres cliquable mais aussi possibilité de taper au clavier
 
-// je défini les nombres de coups possible pour trouver un mot
-
-/* quand une lettre est tapé elle est vérifié sur le mot random qui a été généré au préalable et si la lettre 
-est correct elle s'affiche dans le mot a trouver si false le dessin commence a s'afficher */
 
 //la lettre tapé disparait du tableau et l'user n'a plus la possibilité de taper la meme lettre
 
