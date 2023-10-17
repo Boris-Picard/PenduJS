@@ -106,13 +106,16 @@ let counter = 8;
 const words = document.getElementById("word");
 let letterNumber = document.querySelector(".letterNumber");
 const virtualBoard = document.querySelectorAll(".virtualBoard");
-const disableKeyboard = document.querySelector(".disableKeyboard")
-disableKeyboard.classList.remove("disableKeyboard")
+const disableKeyboard = document.querySelector(".disableKeyboard");
+const replay = document.querySelector(".replay");
+const wordWas = document.querySelector(".wordWas");
+const imgs = document.querySelectorAll("img");
+console.log(imgs);
+disableKeyboard.classList.remove("disableKeyboard");
 
 
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
 let newArraySplit = randomArray.split("");
-console.log(newArraySplit);
 
 // je créer un tableau vide pour l'utilisateur
 let userArray = [];
@@ -130,80 +133,84 @@ splitUnderscore();
 words.append(userArray.join(" "));
 
 // je créer un fonction qui gére le compteur de fail et qui va afficher les messages si l'utilisateur perd 
-
 let countKey = () => {
-    const count = document.querySelector(".count");
+    const count = document.querySelector(".count");      
         counter--;
+        
         count.innerHTML = `nombre de coups restant = ${counter = counter}`;
     if(counter === 0) {
         removeEventListener("keyup", keys);
-        disableKeyboard.classList.add('disableKeyboard')
-        const replay = document.querySelector(".replay");
+        disableKeyboard.classList.add('disableKeyboard');
         replay.classList.remove("d-none");
-        alert("vous avez perdu")
-    }
-    const img = document.querySelector(".pendu1");
-    const img2 = document.querySelector(".pendu2");
-    const img3 = document.querySelector(".pendu3");
-    const img4 = document.querySelector(".pendu4");
-    const img5 = document.querySelector(".pendu5");
-    const img6 = document.querySelector(".pendu6");
-    const img7 = document.querySelector(".pendu7");
-    const img8 = document.querySelector(".pendu8");
-        switch(counter) {
-            case 7:
-                img.classList.remove("d-none");
-            break;
-            case 6:
-                img.classList.add("d-none");
-                img2.classList.remove("d-none");
-            break;
-            case 5:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.remove("d-none");
-            break;
-            case 4:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.add("d-none");
-                img4.classList.remove("d-none");
-            break;
-            case 3:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.add("d-none");
-                img4.classList.add("d-none");
-                img5.classList.remove("d-none");
-            break;
-            case 2:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.add("d-none");
-                img4.classList.add("d-none");
-                img5.classList.add("d-none");
-                img6.classList.remove("d-none");
-            break;
-            case 1:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.add("d-none");
-                img4.classList.add("d-none");
-                img5.classList.add("d-none");
-                img6.classList.add("d-none");
-                img7.classList.remove("d-none");
-            break;
-            case 0:
-                img.classList.add("d-none");
-                img2.classList.add("d-none");
-                img3.classList.add("d-none");
-                img4.classList.add("d-none");
-                img5.classList.add("d-none");
-                img6.classList.add("d-none");
-                img7.classList.add("d-none");
-                img8.classList.remove("d-none");
-            break;
-        };
+        wordWas.innerHTML = `Le mot était ${randomArray}`;
+        alert("qsfqf")
+    };
+    if(counter > 0) {
+        imgs[counter].classList.remove("d-none");
+        console.log(imgs[counter]);
+    };
+    // const img = document.querySelector(".pendu1");
+    // const img2 = document.querySelector(".pendu2");
+    // const img3 = document.querySelector(".pendu3");
+    // const img4 = document.querySelector(".pendu4");
+    // const img5 = document.querySelector(".pendu5");
+    // const img6 = document.querySelector(".pendu6");
+    // const img7 = document.querySelector(".pendu7");
+    // const img8 = document.querySelector(".pendu8");
+    //     switch(counter) {
+    //         case 7:
+    //             img.classList.remove("d-none");
+    //         break;
+    //         case 6:
+    //             img.classList.add("d-none");
+    //             img2.classList.remove("d-none");
+    //         break;
+    //         case 5:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.remove("d-none");
+    //         break;
+    //         case 4:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.add("d-none");
+    //             img4.classList.remove("d-none");
+    //         break;
+    //         case 3:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.add("d-none");
+    //             img4.classList.add("d-none");
+    //             img5.classList.remove("d-none");
+    //         break;
+    //         case 2:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.add("d-none");
+    //             img4.classList.add("d-none");
+    //             img5.classList.add("d-none");
+    //             img6.classList.remove("d-none");
+    //         break;
+    //         case 1:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.add("d-none");
+    //             img4.classList.add("d-none");
+    //             img5.classList.add("d-none");
+    //             img6.classList.add("d-none");
+    //             img7.classList.remove("d-none");
+    //         break;
+    //         case 0:
+    //             img.classList.add("d-none");
+    //             img2.classList.add("d-none");
+    //             img3.classList.add("d-none");
+    //             img4.classList.add("d-none");
+    //             img5.classList.add("d-none");
+    //             img6.classList.add("d-none");
+    //             img7.classList.add("d-none");
+    //             img8.classList.remove("d-none");
+    //         break;
+    //     };
 };
 
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
