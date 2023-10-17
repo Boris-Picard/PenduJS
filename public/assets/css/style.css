@@ -32,3 +32,7 @@ img {
 .virtualBoard {
     text-transform: capitalize;
 }
+
+.blocLetter {
+    font-size: 26px;
+}

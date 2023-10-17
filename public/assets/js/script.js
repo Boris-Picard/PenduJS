@@ -101,6 +101,13 @@ const array = ["sorciere",
 "princessedestenebres",
 "hurlementdeloup"];
 let randomArray = array[Math.floor(Math.random() * array.length)];
+const blocLetter = document.querySelector(".blocLetter");
+let counter = 8;
+const words = document.getElementById("word");
+let letterNumber = document.querySelector(".letterNumber");
+const newGame = document.querySelector(".newGame");
+const virtualBoard = document.querySelectorAll(".virtualBoard");
+
 
 
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
@@ -120,11 +127,10 @@ let splitUnderscore = () => {
 splitUnderscore();
 
 // j'affiche dans mon html le tableau en _
-const words = document.getElementById("word");
 words.append(userArray.join(" "));
 
 // je créer un fonction qui gére le compteur de fail et qui va afficher les messages si l'utilisateur perd 
-let counter = 8
+
 let countKey = () => {
     const count = document.querySelector(".count");
         counter--;
@@ -199,7 +205,6 @@ let countKey = () => {
 };
 
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
-const blocLetter = document.querySelector(".blocLetter")
 let keys = (event) => {
     if(newArraySplit.includes(event.key)) {
         for(let key = 0; key < newArraySplit.length; key++) {
@@ -212,13 +217,15 @@ let keys = (event) => {
     }else {
         blocLetter.innerHTML = `${event.key} est false`;
         countKey();
-    }
+    };
+    if (userArray.join(" ") === newArraySplit.join(" ")) {
+        alert("victoire");
+    };
 };
 
 addEventListener("keyup", keys);
 
 //je créer un clavier virtuel 
-const virtualBoard = document.querySelectorAll(".virtualBoard");
 virtualBoard.forEach(letter => {
     letter.addEventListener("click", () => {
         let letterValue = letter.textContent;
@@ -238,13 +245,16 @@ virtualBoard.forEach(letter => {
 });
 
 // j'indique le nombre de lettre attendue pour le mot a deviner 
-let letterNumber = document.querySelector(".letterNumber");
 letterNumber.innerHTML = `nombre de lettres = ${newArraySplit.length}`;
 
+// bouton nouvelle partie 
+
+let reload = () => {
+    window.addEventListener('load', virtualBoard, keys, countKey)
+}
 
 
-
-
+newGame.addEventListener('click', reload)
 
 //la lettre tapé disparait du tableau et l'user n'a plus la possibilité de taper la meme lettre
 
