@@ -1,6 +1,9 @@
 body {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
     font-family: 'Poppins', sans-serif;
+    background-image: url(../img/13034.jpg);
+    object-fit: cover;
+    background-size: 100%;
 }
 
 #word {
@@ -16,20 +19,8 @@ img {
     width: 100vw;
 }
 
-.replay {
-    height: 10vh;
-    width: 10vw;
-    clip-path: circle();
-}
-
-.newGame {
-    height: 10vh;
-    width: 10vw;
-    clip-path: circle();
-}
-
 @media all and (max-width : 400px) {
-    .btn {
+    .replay {
         height: 20vh;
         width: 20vw;
     }
@@ -53,3 +44,103 @@ img {
     pointer-events: none;
 }
 
+.victory {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    z-index: 999;
+    right: 25%;
+    margin-top: 10%;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.replay {
+    position: absolute;
+    text-align: center;
+    right: 45%;
+    left: 42%;
+    bottom: 0%;
+    color: transparent;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
+.wordWas {
+    position: absolute;
+    bottom: 50%;
+    right: 32%;
+    color: transparent;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
+.win {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
+.loose {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
+.wordWas {
+    font-size: 20px;
+    display: flex;
+    margin: 0;
+    color: black;
+}
+
+.letterNumber {
+    font-size: 20px;
+}
+
+.keyboard {
+    margin-top: 10%;
+}
+
+.word {
+    margin-top: 25%;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.glass {
+    margin-top: 10%;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.letterNumber {
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #d9d9d9;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.count {
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.blocLetter {
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+/* .pendu {
+    mix-blend-mode: screen;
+} */

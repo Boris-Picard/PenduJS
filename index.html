@@ -16,28 +16,35 @@
     </header>
     <main>
         <div class="container">
-            <div class="container">
+            <div class="victory d-none">
+                <a href="index.html" class="replay text-light d-none fs-5 rounded-5">Rejouer</a>
+                <p class="wordWas"></p>
+                <p class="win d-none text-success">Vous avez gagné</p>
+                <p class="loose d-none text-danger">Vous avez perdu</p>
+            </div>
+            <div class="container glass">
                 <div class="row my-2 text-center">
                     <div class="col-12 col-md-12">
-                        <button class="btn text-bg-danger replay d-none">Rejouer</button>
+                        <p class="letterNumber text-light"></p>
                     </div>
                 </div>
-                <div class="row text-center my-5">
-                    <div class="col-12 col-md-6" id="word">
-                        <p class="letterNumber"></p>
-                        <p class="wordWas"></p>
+                <div class="row text-center word">
+                    
+                    <div class="col-12 col-md-6 text-light" id="word">
+                        
+                        
                         
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="">
-                            <img src="./public/assets/img/pendu8.png" alt="" class="img-fluid d-none pendu8">
-                            <img src="./public/assets/img/pendu7.png" alt="" class="img-fluid d-none pendu7">
-                            <img src="./public/assets/img/pendu6.png" alt="" class="img-fluid d-none pendu6">
-                            <img src="./public/assets/img/pendu5.png" alt="" class="img-fluid d-none pendu5">
-                            <img src="./public/assets/img/pendu4.png" alt="" class="img-fluid d-none pendu4">
-                            <img src="./public/assets/img/pendu3.png" alt="" class="img-fluid d-none pendu3">
-                            <img src="./public/assets/img/pendu2.png" alt="" class="img-fluid d-none pendu2">
-                            <img src="./public/assets/img/pendu1.png" alt="" class="img-fluid d-none pendu1">  
+                            <img src="./public/assets/img/pendu8.png" alt="" class="img-fluid d-none pendu8 pendu">
+                            <img src="./public/assets/img/pendu7.png" alt="" class="img-fluid d-none pendu7 pendu">
+                            <img src="./public/assets/img/pendu6.png" alt="" class="img-fluid d-none pendu6 pendu">
+                            <img src="./public/assets/img/pendu5.png" alt="" class="img-fluid d-none pendu5 pendu">
+                            <img src="./public/assets/img/pendu4.png" alt="" class="img-fluid d-none pendu4 pendu">
+                            <img src="./public/assets/img/pendu3.png" alt="" class="img-fluid d-none pendu3 pendu">
+                            <img src="./public/assets/img/pendu2.png" alt="" class="img-fluid d-none pendu2 pendu">
+                            <img src="./public/assets/img/pendu1.png" alt="" class="img-fluid d-none pendu1 pendu">  
                         </div>
                         <p class="text-danger count"></p>
                         <div class="blocLetter">
@@ -45,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center fs-3 mt-5 justify-content-center">
+                <div class="row text-center fs-3 justify-content-center keyboard">
                     <div class="col-md-12 text-bg-light rounded-5 w-50 disableKeyboard">
                         <button class="btn text-bg-dark virtualBoard">a</button>
                         <button class="btn text-bg-dark virtualBoard">b</button>

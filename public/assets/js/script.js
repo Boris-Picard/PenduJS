@@ -1,105 +1,25 @@
 /* On commence par une liste de mots random contenu dans un tableau 
 qui doit etre séléctionné aléatoirement */
-const array = ["sorciere",
-"citrouille",
-"fantome",
-"vampire",
-"zombie",
-"momie",
-"chausouris",
-"araignee",
-"toiledaraignee",
-"monstre",
-"costume",
-"balai",
-"potion",
-"crane",
-"os",
-"tombe",
-"cimetiere",
-"nuit",
-"epouvantail",
-"epee",
-"balaivolant",
-"chaudron",
-"bonbon",
-"squelette",
-"maquillage",
-"magie",
-"mystere",
-"sorcellerie",
-"chatnoir",
-"lune",
-"hurlement",
-"chausourisvampire",
-"loupgarou",
-"feufollet",
-"zombieaffame",
-"arbrehante",
-"diable",
-"frisson",
-"epouvante",
-"sombre",
-"effrayant",
-"noir",
-"effetdelumiere",
-"hurleur",
-"chateauhante",
-"masque",
-"ossements",
-"ombre",
-"epine",
-"abomination",
-"sang",
-"malediction",
-"chairputrefiee",
-"chasseurdemonstres",
-"frankenstein",
-"balaiensorcele",
-"clignotant",
-"tombstone",
-"fouet",
-"loup",
-"magicien",
-"enchanteur",
-"citrouilleilluminee",
-"chaudronbouillonnant",
-"chaines",
-"sombreforet",
-"cris",
-"effroi",
-"portail",
-"fete",
-"noirceur",
-"labyrinthe",
-"chaudronfumant",
-"rirediabolique",
-"cicatrice",
-"tetedemort",
-"aiguille",
-"monstrueux",
-"effetsonore",
-"potionmagique",
-"sueurfroide",
-"malediction",
-"morsure",
-"crevette",
-"malefique",
-"lueur",
-"maudit",
-"demon",
-"decadent",
-"poupeeensorcelee",
-"goules",
-"sombresoiree",
-"chateaulugubre",
-"necromancien",
-"maitredestenebres",
-"saignee",
-"mortvivant",
-"loupgarouaffame",
-"princessedestenebres",
-"hurlementdeloup"];
+const array = ["football",
+"tennis",
+"basketball",
+"natation",
+"volleyball",
+"cyclisme",
+"athletisme",
+"boxe",
+"golf",
+"rugby",
+"escrime",
+"plongee",
+"equitation",
+"handball",
+"judo",
+"kayak",
+"ski",
+"windsurf",
+"hockey",
+"badminton"];
 let randomArray = array[Math.floor(Math.random() * array.length)];
 const blocLetter = document.querySelector(".blocLetter");
 let counter = 8;
@@ -109,14 +29,15 @@ const virtualBoard = document.querySelectorAll(".virtualBoard");
 const disableKeyboard = document.querySelector(".disableKeyboard");
 const replay = document.querySelector(".replay");
 const wordWas = document.querySelector(".wordWas");
-const imgs = document.querySelectorAll("img");
-console.log(imgs);
+const victory = document.querySelector(".victory")
+const win = document.querySelector(".win")
+const loose = document.querySelector(".loose")
 disableKeyboard.classList.remove("disableKeyboard");
 
 
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
 let newArraySplit = randomArray.split("");
-
+console.log(newArraySplit);
 // je créer un tableau vide pour l'utilisateur
 let userArray = [];
 
@@ -136,81 +57,78 @@ words.append(userArray.join(" "));
 let countKey = () => {
     const count = document.querySelector(".count");      
         counter--;
-        
         count.innerHTML = `nombre de coups restant = ${counter = counter}`;
     if(counter === 0) {
         removeEventListener("keyup", keys);
         disableKeyboard.classList.add('disableKeyboard');
         replay.classList.remove("d-none");
         wordWas.innerHTML = `Le mot était ${randomArray}`;
-        alert("qsfqf")
+        victory.classList.remove("d-none");
+        replay.classList.remove("d-none");
+        loose.classList.remove("d-none");
     };
-    if(counter > 0) {
-        imgs[counter].classList.remove("d-none");
-        console.log(imgs[counter]);
-    };
-    // const img = document.querySelector(".pendu1");
-    // const img2 = document.querySelector(".pendu2");
-    // const img3 = document.querySelector(".pendu3");
-    // const img4 = document.querySelector(".pendu4");
-    // const img5 = document.querySelector(".pendu5");
-    // const img6 = document.querySelector(".pendu6");
-    // const img7 = document.querySelector(".pendu7");
-    // const img8 = document.querySelector(".pendu8");
-    //     switch(counter) {
-    //         case 7:
-    //             img.classList.remove("d-none");
-    //         break;
-    //         case 6:
-    //             img.classList.add("d-none");
-    //             img2.classList.remove("d-none");
-    //         break;
-    //         case 5:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.remove("d-none");
-    //         break;
-    //         case 4:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.add("d-none");
-    //             img4.classList.remove("d-none");
-    //         break;
-    //         case 3:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.add("d-none");
-    //             img4.classList.add("d-none");
-    //             img5.classList.remove("d-none");
-    //         break;
-    //         case 2:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.add("d-none");
-    //             img4.classList.add("d-none");
-    //             img5.classList.add("d-none");
-    //             img6.classList.remove("d-none");
-    //         break;
-    //         case 1:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.add("d-none");
-    //             img4.classList.add("d-none");
-    //             img5.classList.add("d-none");
-    //             img6.classList.add("d-none");
-    //             img7.classList.remove("d-none");
-    //         break;
-    //         case 0:
-    //             img.classList.add("d-none");
-    //             img2.classList.add("d-none");
-    //             img3.classList.add("d-none");
-    //             img4.classList.add("d-none");
-    //             img5.classList.add("d-none");
-    //             img6.classList.add("d-none");
-    //             img7.classList.add("d-none");
-    //             img8.classList.remove("d-none");
-    //         break;
-    //     };
+    const img = document.querySelector(".pendu1");
+    const img2 = document.querySelector(".pendu2");
+    const img3 = document.querySelector(".pendu3");
+    const img4 = document.querySelector(".pendu4");
+    const img5 = document.querySelector(".pendu5");
+    const img6 = document.querySelector(".pendu6");
+    const img7 = document.querySelector(".pendu7");
+    const img8 = document.querySelector(".pendu8");
+        switch(counter) {
+            case 7:
+                img.classList.remove("d-none");
+            break;
+            case 6:
+                img.classList.add("d-none");
+                img2.classList.remove("d-none");
+            break;
+            case 5:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.remove("d-none");
+            break;
+            case 4:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.remove("d-none");
+            break;
+            case 3:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.remove("d-none");
+            break;
+            case 2:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.remove("d-none");
+            break;
+            case 1:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.add("d-none");
+                img7.classList.remove("d-none");
+            break;
+            case 0:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.add("d-none");
+                img7.classList.add("d-none");
+                img8.classList.remove("d-none");
+            break;
+        };
 };
 
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
@@ -232,7 +150,9 @@ let keys = (event) => {
         countKey();
     };
     if (userArray.join(" ") === newArraySplit.join(" ")) {
-        alert("victoire");
+        victory.classList.remove("d-none");
+        replay.classList.remove("d-none");
+        win.classList.remove("d-none");
     };
 };
 
@@ -262,13 +182,15 @@ virtualBoard.forEach(letter => {
             
         };
         if (userArray.join(" ") === newArraySplit.join(" ")) {
-            alert("victoire");
+            victory.classList.remove("d-none");
+            replay.classList.remove("d-none");
+            win.classList.remove("d-none");
         };
     });
 });
 
 // j'indique le nombre de lettre attendue pour le mot a deviner 
-letterNumber.innerHTML = `nombre de lettres = ${newArraySplit.length}`;
+letterNumber.innerHTML = `nombre de lettres à trouver ${newArraySplit.length}`;
 
 // bouton nouvelle partie 
 
