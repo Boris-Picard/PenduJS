@@ -23,3 +23,12 @@ img {
         width: 20vw;
     }
 }
+
+
+img {
+    width: 250px;
+}
+
+.virtualBoard {
+    text-transform: capitalize;
+}

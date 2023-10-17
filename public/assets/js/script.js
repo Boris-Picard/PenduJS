@@ -102,8 +102,10 @@ const array = ["sorciere",
 "hurlementdeloup"];
 let randomArray = array[Math.floor(Math.random() * array.length)];
 
+
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
 let newArraySplit = randomArray.split("");
+console.log(newArraySplit);
 
 // je créer un tableau vide pour l'utilisateur
 let userArray = [];
@@ -121,53 +123,119 @@ splitUnderscore();
 const words = document.getElementById("word");
 words.append(userArray.join(" "));
 
+// je créer un fonction qui gére le compteur de fail et qui va afficher les messages si l'utilisateur perd 
+let counter = 8
+let countKey = () => {
+    const count = document.querySelector(".count");
+        counter--;
+        count.innerHTML = `nombre de coups restant = ${counter = counter}`;
+    if(counter === 0) {
+        removeEventListener("keyup", keys);
+        const replay = document.querySelector(".replay");
+        replay.classList.remove("d-none");
+    }
+    const img = document.querySelector(".pendu1");
+    const img2 = document.querySelector(".pendu2");
+    const img3 = document.querySelector(".pendu3");
+    const img4 = document.querySelector(".pendu4");
+    const img5 = document.querySelector(".pendu5");
+    const img6 = document.querySelector(".pendu6");
+    const img7 = document.querySelector(".pendu7");
+    const img8 = document.querySelector(".pendu8");
+        switch(counter) {
+            case 7:
+                img.classList.remove("d-none");
+            break;
+            case 6:
+                img.classList.add("d-none");
+                img2.classList.remove("d-none");
+            break;
+            case 5:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.remove("d-none");
+            break;
+            case 4:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.remove("d-none");
+            break;
+            case 3:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.remove("d-none");
+            break;
+            case 2:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.remove("d-none");
+            break;
+            case 1:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.add("d-none");
+                img7.classList.remove("d-none");
+            break;
+            case 0:
+                img.classList.add("d-none");
+                img2.classList.add("d-none");
+                img3.classList.add("d-none");
+                img4.classList.add("d-none");
+                img5.classList.add("d-none");
+                img6.classList.add("d-none");
+                img7.classList.add("d-none");
+                img8.classList.remove("d-none");
+            break;
+        };
+};
+
 // je récupère la lettre tapé par l'utilisateur que je vais comparer au tableau du mot random et afficher la lettre correspondante si true dans le tableau user
+const blocLetter = document.querySelector(".blocLetter")
 let keys = (event) => {
     if(newArraySplit.includes(event.key)) {
         for(let key = 0; key < newArraySplit.length; key++) {
             if(event.key === newArraySplit[key]) {
                 userArray[key] = newArraySplit[key]; 
                 words.innerHTML = userArray.join(" ");
+                blocLetter.innerHTML = `${event.key} est true`;
             };
         };
-    };
-    countKey();
+    }else {
+        blocLetter.innerHTML = `${event.key} est false`;
+        countKey();
+    }
 };
 
 addEventListener("keyup", keys);
 
-//je créer clavier virtuel 
-// const virtualBoard = document.querySelectorAll(".virtualBoard");
-
-// virtualBoard.forEach(letter => {
-//     letter.addEventListener("click", () => {
-//         let letterValue = letter.textContent;
-//         if(newArraySplit.includes(letterValue)) {
-//             for(let key = 0; key < newArraySplit.length; key++) {
-//                 if(letterValue === newArraySplit[key]) {
-//                     userArray[key] = newArraySplit[key]; 
-//                     words.innerHTML = userArray.join(" ");
-//                 };
-//             };     
-//         } else {
-//             console.log("wrong");
-//         };
-//     });
-// });
-
-// je créer un fonction qui gére le compteur de fail et qui va afficher les messages si l'utilisateur perd 
-counter = 10
-let countKey = () => {
-    const count = document.querySelector(".count");
-        counter--;
-        count.innerHTML = `nombre de coups restant = ${counter = counter}`
-    if(counter === 0) {
-        // const dNone = document.querySelector(".d-none");
-        // dNone.classList.remove("d-none");
-        removeEventListener("keyup", keys);
-    };
-};
-
+//je créer un clavier virtuel 
+const virtualBoard = document.querySelectorAll(".virtualBoard");
+virtualBoard.forEach(letter => {
+    letter.addEventListener("click", () => {
+        let letterValue = letter.textContent;
+        if(newArraySplit.includes(letterValue)) {
+            for(let key = 0; key < newArraySplit.length; key++) {
+                if(letterValue === newArraySplit[key]) {
+                    userArray[key] = newArraySplit[key]; 
+                    words.innerHTML = userArray.join(" ");
+                    blocLetter.innerHTML = `${letterValue} est true`;
+                };
+            };     
+        } else {
+            blocLetter.innerHTML = `${letterValue} est false`;
+            countKey();
+        };
+    });
+});
 
 // j'indique le nombre de lettre attendue pour le mot a deviner 
 let letterNumber = document.querySelector(".letterNumber");
