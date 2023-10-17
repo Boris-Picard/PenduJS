@@ -105,9 +105,9 @@ const blocLetter = document.querySelector(".blocLetter");
 let counter = 8;
 const words = document.getElementById("word");
 let letterNumber = document.querySelector(".letterNumber");
-const newGame = document.querySelector(".newGame");
 const virtualBoard = document.querySelectorAll(".virtualBoard");
-
+const disableKeyboard = document.querySelector(".disableKeyboard")
+disableKeyboard.classList.remove("disableKeyboard")
 
 
 // je créer un nouveau tableau de mon mot random que je split lettre par lettre
@@ -137,8 +137,10 @@ let countKey = () => {
         count.innerHTML = `nombre de coups restant = ${counter = counter}`;
     if(counter === 0) {
         removeEventListener("keyup", keys);
+        disableKeyboard.classList.add('disableKeyboard')
         const replay = document.querySelector(".replay");
         replay.classList.remove("d-none");
+        alert("vous avez perdu")
     }
     const img = document.querySelector(".pendu1");
     const img2 = document.querySelector(".pendu2");
@@ -211,10 +213,14 @@ let keys = (event) => {
             if(event.key === newArraySplit[key]) {
                 userArray[key] = newArraySplit[key]; 
                 words.innerHTML = userArray.join(" ");
+                blocLetter.classList.remove("text-danger");
+                blocLetter.classList.add("text-success");
                 blocLetter.innerHTML = `${event.key} est true`;
             };
         };
     }else {
+        blocLetter.classList.remove("text-success");
+        blocLetter.classList.add("text-danger");
         blocLetter.innerHTML = `${event.key} est false`;
         countKey();
     };
@@ -234,12 +240,22 @@ virtualBoard.forEach(letter => {
                 if(letterValue === newArraySplit[key]) {
                     userArray[key] = newArraySplit[key]; 
                     words.innerHTML = userArray.join(" ");
+                    event.target.classList.add("disableKeyboard","bg-success");
+                    blocLetter.classList.remove("text-danger");
+                    blocLetter.classList.add("text-success");
                     blocLetter.innerHTML = `${letterValue} est true`;
                 };
             };     
         } else {
+            event.target.classList.add("disableKeyboard","bg-danger");
+            blocLetter.classList.remove("text-success");
+            blocLetter.classList.add("text-danger");
             blocLetter.innerHTML = `${letterValue} est false`;
             countKey();
+            
+        };
+        if (userArray.join(" ") === newArraySplit.join(" ")) {
+            alert("victoire");
         };
     });
 });
@@ -249,12 +265,6 @@ letterNumber.innerHTML = `nombre de lettres = ${newArraySplit.length}`;
 
 // bouton nouvelle partie 
 
-let reload = () => {
-    window.addEventListener('load', virtualBoard, keys, countKey)
-}
-
-
-newGame.addEventListener('click', reload)
 
 //la lettre tapé disparait du tableau et l'user n'a plus la possibilité de taper la meme lettre
 

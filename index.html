@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/assets/framework/bootstrap.min.css">
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <title>Pendu</title>
@@ -17,59 +20,59 @@
                 <div class="row my-2 text-center">
                     <div class="col-12 col-md-12">
                         <button class="btn text-bg-danger replay d-none">Rejouer</button>
-                        <button class="btn text-bg-warning newGame">Nouvelle partie</button>
+                        <button class="btn text-bg-warning newGame">Nouvelle <br>partie</button>
                     </div>
                 </div>
                 <div class="row text-center my-5">
-                    <div class="col-12" id="word">
+                    <div class="col-12 col-md-6" id="word">
                         <p class="letterNumber"></p>
                         
                     </div>
-                    <div class="col-12 my-5">
+                    <div class="col-12 col-md-6">
+                        <div class="">
+                            <img src="./public/assets/img/pendu1.png" alt="" class="img-fluid d-none pendu1">
+                            <img src="./public/assets/img/pendu2.png" alt="" class="img-fluid d-none pendu2">
+                            <img src="./public/assets/img/pendu3.png" alt="" class="img-fluid d-none pendu3">
+                            <img src="./public/assets/img/pendu4.png" alt="" class="img-fluid d-none pendu4">
+                            <img src="./public/assets/img/pendu5.png" alt="" class="img-fluid d-none pendu5">
+                            <img src="./public/assets/img/pendu6.png" alt="" class="img-fluid d-none pendu6">
+                            <img src="./public/assets/img/pendu7.png" alt="" class="img-fluid d-none pendu7">
+                            <img src="./public/assets/img/pendu8.png" alt="" class="img-fluid d-none pendu8">
+                        </div>
                         <p class="text-danger count"></p>
-                        <div class="blocLetter text-danger">
+                        <div class="blocLetter">
                             
                         </div>
                     </div>
                 </div>
-                <div class="row text-center fs-3 mt-5">
-                    <div class="col-12">
-                        <img src="./public/assets/img/pendu1.png" alt="" class="img-fluid d-none pendu1">
-                        <img src="./public/assets/img/pendu2.png" alt="" class="img-fluid d-none pendu2">
-                        <img src="./public/assets/img/pendu3.png" alt="" class="img-fluid d-none pendu3">
-                        <img src="./public/assets/img/pendu4.png" alt="" class="img-fluid d-none pendu4">
-                        <img src="./public/assets/img/pendu5.png" alt="" class="img-fluid d-none pendu5">
-                        <img src="./public/assets/img/pendu6.png" alt="" class="img-fluid d-none pendu6">
-                        <img src="./public/assets/img/pendu7.png" alt="" class="img-fluid d-none pendu7">
-                        <img src="./public/assets/img/pendu8.png" alt="" class="img-fluid d-none pendu8">
-                    </div>
-                    <div class="col-12">
-                        <button class="text-bg-dark virtualBoard">a<button>
-                        <button class="text-bg-dark virtualBoard">b<button>
-                        <button class="text-bg-dark virtualBoard">c<button>
-                        <button class="text-bg-dark virtualBoard">d<button>
-                        <button class="text-bg-dark virtualBoard">e<button>
-                        <button class="text-bg-dark virtualBoard">f<button>
-                        <button class="text-bg-dark virtualBoard">g<button>
-                        <button class="text-bg-dark virtualBoard">h<button>
-                        <button class="text-bg-dark virtualBoard">i<button>
-                        <button class="text-bg-dark virtualBoard">j<button>
-                        <button class="text-bg-dark virtualBoard">k<button>
-                        <button class="text-bg-dark virtualBoard">l<button>
-                        <button class="text-bg-dark virtualBoard">m<button>
-                        <button class="text-bg-dark virtualBoard">n<button>
-                        <button class="text-bg-dark virtualBoard">o<button>
-                        <button class="text-bg-dark virtualBoard">p<button>
-                        <button class="text-bg-dark virtualBoard">q<button>
-                        <button class="text-bg-dark virtualBoard">r<button>
-                        <button class="text-bg-dark virtualBoard">s<button>
-                        <button class="text-bg-dark virtualBoard">t<button>
-                        <button class="text-bg-dark virtualBoard">u<button>
-                        <button class="text-bg-dark virtualBoard">v<button>
-                        <button class="text-bg-dark virtualBoard">w<button>
-                        <button class="text-bg-dark virtualBoard">x<button>
-                        <button class="text-bg-dark virtualBoard">y<button>
-                        <button class="text-bg-dark virtualBoard">z<button>
+                <div class="row text-center fs-3 mt-5 justify-content-center">
+                    <div class="col-md-12 text-bg-light rounded-5 w-50 disableKeyboard">
+                        <button class="btn text-bg-dark virtualBoard">a</button>
+                        <button class="btn text-bg-dark virtualBoard">b</button>
+                        <button class="btn text-bg-dark virtualBoard">c</button>
+                        <button class="btn text-bg-dark virtualBoard">d</button>
+                        <button class="btn text-bg-dark virtualBoard">e</button>
+                        <button class="btn text-bg-dark virtualBoard">f</button>
+                        <button class="btn text-bg-dark virtualBoard">g</button>
+                        <button class="btn text-bg-dark virtualBoard">h</button>
+                        <button class="btn text-bg-dark virtualBoard">i</button>
+                        <button class="btn text-bg-dark virtualBoard">j</button>
+                        <button class="btn text-bg-dark virtualBoard">k</button>
+                        <button class="btn text-bg-dark virtualBoard">l</button>
+                        <button class="btn text-bg-dark virtualBoard">m</button>
+                        <button class="btn text-bg-dark virtualBoard">n</button>
+                        <button class="btn text-bg-dark virtualBoard">o</button>
+                        <button class="btn text-bg-dark virtualBoard">p</button>
+                        <button class="btn text-bg-dark virtualBoard">q</button>
+                        <button class="btn text-bg-dark virtualBoard">r</button>
+                        <button class="btn text-bg-dark virtualBoard">s</button>
+                        <button class="btn text-bg-dark virtualBoard">t</button>
+                        <button class="btn text-bg-dark virtualBoard">u</button>
+                        <button class="btn text-bg-dark virtualBoard">v</button>
+                        <button class="btn text-bg-dark virtualBoard">w</button>
+                        <button class="btn text-bg-dark virtualBoard">x</button>
+                        <button class="btn text-bg-dark virtualBoard">y</button>
+                        <button class="btn text-bg-dark virtualBoard">z</button>
                     </div>
                 </div>
             </div>

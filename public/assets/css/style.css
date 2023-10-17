@@ -1,3 +1,8 @@
+body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    font-family: 'Poppins', sans-serif;
+}
+
 #word {
     font-size: 40px;
 }
@@ -11,7 +16,13 @@ img {
     width: 100vw;
 }
 
-.btn {
+.replay {
+    height: 10vh;
+    width: 10vw;
+    clip-path: circle();
+}
+
+.newGame {
     height: 10vh;
     width: 10vw;
     clip-path: circle();
@@ -24,9 +35,9 @@ img {
     }
 }
 
-
 img {
     width: 250px;
+    mix-blend-mode: darken;
 }
 
 .virtualBoard {
@@ -36,3 +47,9 @@ img {
 .blocLetter {
     font-size: 26px;
 }
+
+
+.disableKeyboard {
+    pointer-events: none;
+}
+
