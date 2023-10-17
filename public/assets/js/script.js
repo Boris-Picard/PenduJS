@@ -29,9 +29,11 @@ const virtualBoard = document.querySelectorAll(".virtualBoard");
 const disableKeyboard = document.querySelector(".disableKeyboard");
 const replay = document.querySelector(".replay");
 const wordWas = document.querySelector(".wordWas");
-const victory = document.querySelector(".victory")
-const win = document.querySelector(".win")
-const loose = document.querySelector(".loose")
+const victory = document.querySelector(".victory");
+const audioVictory = document.querySelector(".audioVictory");
+const gifCr7 = document.querySelector(".gifCr7");
+const theOfficeNo = document.querySelector(".theOfficeNo");
+const audioLoose = document.querySelector(".audioLoose");
 disableKeyboard.classList.remove("disableKeyboard");
 
 
@@ -64,8 +66,8 @@ let countKey = () => {
         replay.classList.remove("d-none");
         wordWas.innerHTML = `Le mot était ${randomArray}`;
         victory.classList.remove("d-none");
-        replay.classList.remove("d-none");
-        loose.classList.remove("d-none");
+        theOfficeNo.classList.remove("d-none");
+        audioLoose.play();
     };
     const img = document.querySelector(".pendu1");
     const img2 = document.querySelector(".pendu2");
@@ -151,8 +153,9 @@ let keys = (event) => {
     };
     if (userArray.join(" ") === newArraySplit.join(" ")) {
         victory.classList.remove("d-none");
+        audioVictory.play();
+        gifCr7.classList.remove("d-none");
         replay.classList.remove("d-none");
-        win.classList.remove("d-none");
     };
 };
 
@@ -183,8 +186,9 @@ virtualBoard.forEach(letter => {
         };
         if (userArray.join(" ") === newArraySplit.join(" ")) {
             victory.classList.remove("d-none");
+            audioVictory.play();
+            gifCr7.classList.remove("d-none");
             replay.classList.remove("d-none");
-            win.classList.remove("d-none");
         };
     });
 });

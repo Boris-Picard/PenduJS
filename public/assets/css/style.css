@@ -1,9 +1,7 @@
 body {
     /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
     font-family: 'Poppins', sans-serif;
-    background-image: url(../img/13034.jpg);
-    object-fit: cover;
-    background-size: 100%;
+    background: linear-gradient(to right, #000428, #004e92);
 }
 
 #word {
@@ -64,43 +62,26 @@ img {
     position: absolute;
     text-align: center;
     right: 45%;
-    left: 42%;
+    left: 25%;
     bottom: 0%;
     color: transparent;
     background-clip: text;
     text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+    z-index: 9999;
 }
 
 .wordWas {
     position: absolute;
     bottom: 50%;
-    right: 32%;
+    right: 30%;
     color: transparent;
     background-clip: text;
     text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
-}
-
-.win {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    background-clip: text;
-    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
-}
-
-.loose {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    background-clip: text;
-    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
-}
-
-.wordWas {
     font-size: 20px;
     display: flex;
     margin: 0;
-    color: black;
+    color: white;
+    z-index: 99999;
 }
 
 .letterNumber {
@@ -112,12 +93,12 @@ img {
 }
 
 .word {
-    margin-top: 25%;
+    margin-top: 3%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
 
 .glass {
-    margin-top: 10%;
+    margin-top: 5%;
     background: rgba( 255, 255, 255, 0.3 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 2px );
@@ -135,12 +116,44 @@ img {
 
 .count {
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    text-transform: capitalize;
 }
 
 .blocLetter {
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    text-transform: uppercase;
 }
 
 /* .pendu {
     mix-blend-mode: screen;
 } */
+
+.gifCr7 {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    z-index: 999;
+    top: 0;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.theOfficeNo {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    z-index: 999;
+    top: 0;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
