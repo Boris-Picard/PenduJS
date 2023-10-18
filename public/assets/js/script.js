@@ -43,7 +43,7 @@ console.log(newArraySplit);
 // je créer un tableau vide pour l'utilisateur
 let userArray = [];
 
-// j'ajoute a mon tableau utilisateur des underscores suivant la longueur du mot random dans mon html
+// j'ajoute a mon tableau utilisateur des underscores en comparaisont a la longueur du mot random dans mon html
 let splitUnderscore = () => {
     for(let letter = 0; letter < newArraySplit.length; letter++ ) {
     userArray[letter] = "_";
@@ -196,14 +196,4 @@ virtualBoard.forEach(letter => {
 // j'indique le nombre de lettre attendue pour le mot a deviner 
 letterNumber.innerHTML = `nombre de lettres à trouver ${newArraySplit.length}`;
 
-// bouton nouvelle partie 
-
-
-//la lettre tapé disparait du tableau et l'user n'a plus la possibilité de taper la meme lettre
-
-// si l'user trouve le mot un message de victoire s'affiche 
-
-// si l'user perd un screamer s'affiche
-
-// je créer un bouton pour rejouer 
 
